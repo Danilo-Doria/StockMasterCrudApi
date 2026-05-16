@@ -1,7 +1,7 @@
 import { renderProducts } from './services/ui.service';
 import { searchProduct } from './services/search.service';
 import { updateStats } from './services/stats.service';
-import { addProduct, deleteProduct } from './services/product.service';
+import { addProduct, deleteProduct, editProduct } from './services/product.service';
 import { showView } from "./router/router";
 import './styles/globals.css';
 
@@ -84,16 +84,86 @@ form.addEventListener('submit', async (e) => {
     await getApi();
 });
 
+
 document.addEventListener("click", async (e) => {
 
-    const btn = e.target.closest(".delete-btn");
+    const btnDelete = e.target.closest(".delete-btn");
 
-    if (!btn) {
+    if (!btnDelete) {
         return;
     }
 
-    const id = btn.dataset.id;
+    const id = btnDelete.dataset.id;
 
     await deleteProduct(id);
     await getApi()
+});
+
+// EDIT PRODUCT LOGIC
+
+const editModal = document.getElementById("edit-modal");
+const saveModal = document.getElementById("save-product");
+const closeModal = document.getElementById("close-modal");
+
+// ID'S NODAL
+const editName = document.getElementById("edit-name");
+const editDescription = document.getElementById("edit-description");
+const editStock = document.getElementById("edit-stock");
+const editPrice = document.getElementById("edit-price");
+
+let currentProductId = null;
+
+// OPEN MODAL
+
+document.addEventListener("click", (e) => {
+
+    const btnEdit = e.target.closest(".edit-btn");
+
+    if (!btnEdit) {
+        return;
+    }
+
+    currentProductId = btnEdit.dataset.id;
+
+    editName.value = btnEdit.dataset.name;
+    editDescription.value = btnEdit.dataset.description;
+    editStock.value = btnEdit.dataset.stock;
+    editPrice.value = btnEdit.dataset.price;
+
+    editModal.classList.remove("hidden");
+    editModal.classList.add("flex");
+
+});
+
+
+
+// SAVE PRODUCT
+
+saveModal.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+
+    const updatedProduct = {
+        nombre: editName.value,
+        descripcion: editDescription.value,
+        stock: parseInt(editStock.value),
+        precio: parseFloat(editPrice.value)
+    };
+
+    await editProduct(currentProductId, updatedProduct);
+
+    editModal.classList.add("hidden");
+    editModal.classList.remove("flex");
+
+    await getApi();
+
+});
+
+// CLOSE MODAL
+
+closeModal.addEventListener("click", () => {
+
+    editModal.classList.add("hidden");
+    editModal.classList.remove("flex");
+
 });

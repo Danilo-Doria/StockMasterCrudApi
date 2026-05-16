@@ -47,7 +47,8 @@
         <p id="login-message" class="text-sm font-semibold text-red-500">
         </p>
 
-        <button type="submit" class="cursor-pointer w-full bg-indigo-600 text-white py-3 rounded-2xl font-black hover:scale-103 transition all duration-300 ease-in-out">
+        <button type="submit"
+          class="cursor-pointer w-full bg-indigo-600 text-white py-3 rounded-2xl font-black hover:scale-103 transition all duration-300 ease-in-out">
           Login
         </button>
 
@@ -56,8 +57,9 @@
     </div>
   </section>
 
-  <section id="home-view" class="hidden">
+  <section id="home-view" class = "hidden">
     <div class="flex h-screen overflow-hidden">
+
       <!-- Main Content (Full Width) -->
       <main class="flex-1 flex flex-col min-w-0 overflow-hidden">
         <!-- Header -->
@@ -211,6 +213,38 @@
           </div>
         </div>
       </main>
+    </div>
+
+    <!--Edit product form-->
+
+    <div id="edit-modal" class="absolute inset-0 bg-black/40 items-center justify-center z-1 hidden">
+
+      <div class="bg-white p-8 rounded-2xl w-[400px]">
+
+        <h2 class="text-2xl font-bold mb-6">Editar producto</h2>
+
+        <form id="edit-form" class="flex flex-col gap-4">
+          
+          <input type="text" id="edit-name" placeholder="Nombre" class="border p-3 rounded-xl" required>
+
+          <input type="text" id="edit-description" placeholder="Descripción" class="border p-3 rounded-xl">
+
+          <input type="number" id="edit-stock" placeholder="Stock" class="border p-3 rounded-xl" min="0" required>
+
+          <input type="number" id="edit-price" placeholder="Precio" class="border p-3 rounded-xl" min="0" required>
+
+          <div class="flex gap-3 mt-4">
+
+            <button type="submit" id ="save-product" class="bg-indigo-600 text-white px-4 py-3 rounded-xl cursor-pointer">
+              Guardar
+            </button>
+
+            <button type="button" id="close-modal" class="bg-slate-200 px-4 py-3 rounded-xl cursor-pointer">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 

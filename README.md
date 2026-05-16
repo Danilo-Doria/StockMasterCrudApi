@@ -31,13 +31,18 @@ Tu misión es conectar la interfaz visual con la lógica del backend:
 
 ## 🚀 Cómo empezar
 
-1.  Instala las dependencias en la carpeta del cliente:
+1.  Instala las dependencias en la carpeta del `cliente`:
     ```bash
     cd client
     npm install
     npm run dev
     ```
-2.  Configura e inicia tu servidor en la carpeta `api`.
-
+2.  Configura e inicia tu servidor en la carpeta `api`:
+    ```bash
+    cd api
+    npm install
+    touch db.json
+    npx json-server db.json
+    ```
 ---
 ¡Mucha suerte con el desarrollo! Que el código te acompañe. 💻✨
