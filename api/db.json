@@ -1,144 +1,47 @@
 {
   "products": [
     {
-      "id": 1,
-      "nombre": "MacBook Pro M2",
-      "precio": 1999.00,
-      "stock": 15,
-      "descripcion": "Laptop potente para desarrollo y diseño."
-    },
-    {
-      "id": 2,
-      "nombre": "Mouse Logitech MX Master 3S",
-      "precio": 99.00,
-      "stock": 5,
-      "descripcion": "Mouse ergonómico avanzado con scroll infinito."
-    },
-    {
-      "id": 3,
-      "nombre": "Teclado Keychron K2",
-      "precio": 120.00,
-      "stock": 2,
-      "descripcion": "Teclado mecánico inalámbrico retroiluminado."
-    },
-    {
-      "id": 4,
-      "nombre": "Monitor Samsung Odyssey G5",
-      "precio": 349.99,
-      "stock": 8,
-      "descripcion": "Monitor gaming QHD de 27 pulgadas."
-    },
-    {
-      "id": 5,
-      "nombre": "iPhone 15 Pro",
-      "precio": 1299.00,
-      "stock": 12,
-      "descripcion": "Smartphone Apple con chip A17 Pro."
-    },
-    {
-      "id": 6,
-      "nombre": "iPad Air M2",
-      "precio": 799.00,
-      "stock": 6,
-      "descripcion": "Tablet ligera y potente para productividad."
-    },
-    {
-      "id": 7,
-      "nombre": "SSD Samsung 990 Pro 1TB",
-      "precio": 149.99,
-      "stock": 20,
-      "descripcion": "Unidad SSD NVMe de alto rendimiento."
-    },
-    {
-      "id": 8,
-      "nombre": "Webcam Logitech Brio 4K",
-      "precio": 179.99,
-      "stock": 9,
-      "descripcion": "Cámara web ideal para streaming."
-    },
-    {
-      "id": 9,
-      "nombre": "Audífonos Sony WH-1000XM5",
-      "precio": 399.00,
-      "stock": 7,
-      "descripcion": "Audífonos con cancelación de ruido."
-    },
-    {
-      "id": 10,
-      "nombre": "Silla Gamer Secretlab Titan",
-      "precio": 549.99,
-      "stock": 4,
-      "descripcion": "Silla ergonómica premium para gaming."
-    },
-    {
-      "id": 11,
+      "id": "11",
       "nombre": "Router ASUS ROG Rapture",
       "precio": 299.99,
       "stock": 10,
       "descripcion": "Router gaming WiFi 6 de alta velocidad."
     },
     {
-      "id": 12,
+      "id": "12",
       "nombre": "Tarjeta Gráfica RTX 4080",
       "precio": 1399.99,
       "stock": 3,
       "descripcion": "GPU de alto rendimiento para gaming y render."
     },
     {
-      "id": 13,
+      "id": "13",
       "nombre": "Procesador Ryzen 9 7950X",
       "precio": 699.99,
       "stock": 11,
       "descripcion": "CPU AMD de última generación."
     },
     {
-      "id": 14,
+      "id": "14",
       "nombre": "Memoria RAM Corsair 32GB DDR5",
       "precio": 189.99,
       "stock": 14,
       "descripcion": "Kit DDR5 de alta velocidad."
     },
     {
-      "id": 15,
-      "nombre": "Steam Deck OLED",
-      "precio": 649.00,
-      "stock": 5,
-      "descripcion": "Consola portátil para videojuegos de PC."
-    },
-    {
-      "id": 16,
-      "nombre": "Nintendo Switch OLED",
-      "precio": 349.99,
-      "stock": 13,
-      "descripcion": "Consola híbrida portátil y de sobremesa."
-    },
-    {
-      "id": 17,
-      "nombre": "Apple Watch Series 9",
-      "precio": 499.99,
-      "stock": 8,
-      "descripcion": "Reloj inteligente con monitoreo avanzado."
-    },
-    {
-      "id": 18,
-      "nombre": "Cámara Sony Alpha A7 IV",
-      "precio": 2499.00,
+      "nombre": "Xiaomi 14",
+      "precio": 900,
       "stock": 2,
-      "descripcion": "Cámara mirrorless profesional."
+      "descripcion": "Phone",
+      "id": "LrD3YXMJZWE"
     },
     {
-      "id": 19,
-      "nombre": "Micrófono HyperX QuadCast",
-      "precio": 139.99,
-      "stock": 16,
-      "descripcion": "Micrófono USB para streaming y podcast."
-    },
-    {
-      "id": 20,
-      "nombre": "Dock USB-C Anker 8 en 1",
-      "precio": 89.99,
-      "stock": 18,
-      "descripcion": "Hub multipuerto USB-C para laptops."
+      "nombre": "Steam Deck",
+      "precio": 1500,
+      "stock": 15,
+      "descripcion": "Handled Console",
+      "id": "irhoJ2c1Y5Y"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
