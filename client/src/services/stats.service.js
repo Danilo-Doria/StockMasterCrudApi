@@ -1,3 +1,4 @@
+// Statistics
 export function updateStats(products) {
     const totalSku = document.getElementById("stat-total");
     const inventoryValue = document.getElementById("stat-value");

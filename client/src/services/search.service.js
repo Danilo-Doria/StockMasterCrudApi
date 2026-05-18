@@ -1,5 +1,7 @@
 import { renderProducts } from "./ui.service";
 
+
+// SEARCH BAR
 export function searchProduct(products) {
     const searchInput = document.getElementById("search");
 

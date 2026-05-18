@@ -1,3 +1,4 @@
+// ADD PRODUCT
 const urlApi = "http://localhost:3000/products"
 
 export async function addProduct(product) {
@@ -21,6 +22,8 @@ export async function addProduct(product) {
     }
 }
 
+
+// DELETE PRODUCT
 export async function deleteProduct(id) {
     try {
 
@@ -39,6 +42,8 @@ export async function deleteProduct(id) {
     }
 }
 
+
+// EDIT PRODUCT
 export async function editProduct(id, updatedProduct) {
     try {
 
@@ -61,9 +66,6 @@ export async function editProduct(id, updatedProduct) {
         return data;
 
     } catch (error) {
-
         console.error(error);
-
     }
-
 }
