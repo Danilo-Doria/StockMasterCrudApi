@@ -1,15 +1,15 @@
 // Statistics
-export function updateStats(products) {
+export function updateStats(totalProducts) {
     const totalSku = document.getElementById("stat-total");
     const inventoryValue = document.getElementById("stat-value");
     const criticalStock = document.getElementById("stat-low");
     let totalValue = 0
 
-    // for (const product of products) {
+    // for (const product of totalProducts) {
     //     totalValue += product.precio * product.stock;
     // }
 
-    totalValue = products.reduce((acc, product) => {
+    totalValue = totalProducts.reduce((acc, product) => {
         return acc + (product.precio * product.stock) 
     }, 0);
 

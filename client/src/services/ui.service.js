@@ -1,12 +1,12 @@
 // RENDER PRODUCTS IN HTML
-export async function renderProducts(products) {
+export async function renderProducts(limitedproducts, totalProducts) {
     const productsContainer = document.getElementById("inventory-list");
     const quantity = document.getElementById("show-quantity");
     let html = '';
 
-    quantity.textContent = `Mostrando 1 a 5 de ${products.length} productos`;
+    quantity.textContent = `Mostrando ${limitedproducts.length} de ${totalProducts.length} productos`;
 
-    for (const product of products) {
+    for (const product of limitedproducts) {
 
         html += `
         <tr class="hover:bg-slate-50/30 transition-colors group">
@@ -53,4 +53,5 @@ export async function renderProducts(products) {
         </tr>`;
     }
     productsContainer.innerHTML = html;
+    
 }

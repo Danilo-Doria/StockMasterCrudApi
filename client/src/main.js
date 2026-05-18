@@ -56,39 +56,57 @@ homeBtn.addEventListener('click', () => {
 })
 
 
-// API Logic
-const urlApi = "http://localhost:3000/products"
+// API LOGIC
+const urlApi = "http://localhost:3000/products";
+let currentPage = 1;
+const limit = 3;
+
+// PREV AND NEXT BTNS
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
 
 async function getApi() {
-    try {
-        const response = await fetch(urlApi);
-        const products = await response.json();
+    const finalUrl = `${urlApi}?_page=${currentPage}&_per_page=${limit}&_sort=-id`;
 
-        await renderProducts(products.reverse());
-        await searchProduct(products);
-        await updateStats(products);
+    try {
+        const baseResponse = await fetch(urlApi);
+        const response = await fetch(finalUrl);
+
+        if (!response.ok || !baseResponse.ok) {
+            throw new Error("Error en la petición");
+        };
+        
+        const totalProducts = await baseResponse.json();
+        const result = await response.json();
+        const limitedProducts = result.data; 
+
+        await renderProducts(limitedProducts, totalProducts);
+        await searchProduct(totalProducts, limitedProducts)
+        await updateStats(totalProducts);
+
+        prev.disabled = result.prev === null;
+        next.disabled = result.next === null;
 
     } catch (error) {
         console.log("Error: ", error);
     }
-};
+}
 
+// NEXT BTN
+next.addEventListener('click', () => {
+    currentPage++;
+    getApi();
+});
 
-// NEXT PAGE
-// next.addEventListener('click', () => {
-
-// });
-
-
-// PREV PAGE
-// prev.addEventListener('click', () => {
-
-// });
+// PREV BTN
+prev.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        getApi();
+    }
+});
 
 getApi();
-
 
 // ADD PRODUCT LOGIC
 const formNewProduct = document.getElementById("product-form");
@@ -216,7 +234,7 @@ saveBtnModal.addEventListener("click", async (e) => {
         descripcion: editDescription.value
     };
 
-    await editProduct(currentProductId, updatedProduct);
+    await editProduct(editCurrentId, updatedProduct);
 
     editModal.classList.add("hidden");
     editModal.classList.remove("flex");
