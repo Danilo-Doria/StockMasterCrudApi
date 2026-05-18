@@ -18,15 +18,15 @@ loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (!username || !password) {
-        loginMessage.textContent = "Please complete all fields";
+        loginMessage.textContent = "Por favor complete los campos requeridos";
         return;
 
     } else if (username !== "admin") {
-        loginMessage.textContent = "Incorrect username";
+        loginMessage.textContent = "Nombre incorrecto";
         return;
 
     } else if (password !== "1234") {
-        loginMessage.textContent = "Incorrect password";
+        loginMessage.textContent = "Contraseña incorrecta";
         return;
     } else {
         loginMessage.textContent = "";
@@ -34,6 +34,22 @@ loginForm.addEventListener("submit", (e) => {
     }
 
 });
+
+const contactForm = document.getElementById("contact-form");
+const contactBtn = document.getElementById("contact-btn");
+const homeBtn = document.getElementById("home-btn");
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+contactBtn.addEventListener('click', () => {
+    showView("contact-view");
+});
+
+homeBtn.addEventListener('click', () => {
+    showView("home-view");
+})
 
 // API Logic
 
@@ -58,14 +74,6 @@ async function getApi() {
     }
 }
 
-// next.addEventListener('click', () => {
-
-// });
-
-// prev.addEventListener('click', () => {
-
-// });
-
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -84,7 +92,21 @@ form.addEventListener('submit', async (e) => {
     await getApi();
 });
 
+// DELETE PRODUCT LOGIC
 
+const deleteModal = document.getElementById("delete-modal");
+const deleteBtnModal = document.getElementById("delete-product");
+const closeDeleteModal = document.getElementById("delete-close-modal");
+
+// ID'S MODAL
+const deleteName = document.getElementById("delete-name");
+const deleteDescription = document.getElementById("delete-description");
+const deleteStock = document.getElementById("delete-stock");
+const deletePrice = document.getElementById("delete-price");
+
+let deleteCurrentID = null;
+
+// OPEN DELETE MODAL
 document.addEventListener("click", async (e) => {
 
     const btnDelete = e.target.closest(".delete-btn");
@@ -93,10 +115,36 @@ document.addEventListener("click", async (e) => {
         return;
     }
 
-    const id = btnDelete.dataset.id;
+    deleteCurrentID = btnDelete.dataset.id;
 
-    await deleteProduct(id);
-    await getApi()
+    deleteName.value = btnDelete.dataset.name;
+    deleteDescription.value = btnDelete.dataset.description;
+    deleteStock.value = btnDelete.dataset.stock;
+    deletePrice.value = btnDelete.dataset.price;
+
+    deleteModal.classList.remove("hidden");
+    deleteModal.classList.add("flex");
+});
+
+// DELETE PRODUCT
+
+deleteBtnModal.addEventListener("click", async (e) => {
+
+    e.preventDefault();
+
+    deleteModal.classList.add("hidden");
+    deleteModal.classList.remove("flex");
+
+    await deleteProduct(deleteCurrentID);
+    await getApi();
+
+});
+
+closeDeleteModal.addEventListener("click", () => {
+
+    deleteModal.classList.add("hidden");
+    deleteModal.classList.remove("flex");
+
 });
 
 // EDIT PRODUCT LOGIC
@@ -105,7 +153,7 @@ const editModal = document.getElementById("edit-modal");
 const saveModal = document.getElementById("save-product");
 const closeModal = document.getElementById("close-modal");
 
-// ID'S NODAL
+// ID'S MODAL
 const editName = document.getElementById("edit-name");
 const editDescription = document.getElementById("edit-description");
 const editStock = document.getElementById("edit-stock");
@@ -134,8 +182,6 @@ document.addEventListener("click", (e) => {
     editModal.classList.add("flex");
 
 });
-
-
 
 // SAVE PRODUCT
 
@@ -167,3 +213,11 @@ closeModal.addEventListener("click", () => {
     editModal.classList.remove("flex");
 
 });
+
+// next.addEventListener('click', () => {
+
+// });
+
+// prev.addEventListener('click', () => {
+
+// });

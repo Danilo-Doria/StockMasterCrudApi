@@ -4,9 +4,14 @@ export function updateStats(products) {
     const criticalStock = document.getElementById("stat-low");
     let totalValue = 0
 
-    for (const product of products) {
-        totalValue += Number(product.precio) * Number(product.stock);
-    }
-    inventoryValue.textContent = totalValue.toFixed(2);
+    // for (const product of products) {
+    //     totalValue += product.precio * product.stock;
+    // }
+
+    totalValue = products.reduce((acc, product) => {
+        return acc + (product.precio * product.stock) 
+    }, 0);
+
+    inventoryValue.textContent = Number(totalValue.toFixed(2));
     totalSku.textContent = products.length;
 }
