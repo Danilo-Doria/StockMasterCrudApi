@@ -13,6 +13,16 @@ export function updateStats(totalProducts) {
         return acc + (product.precio * product.stock) 
     }, 0);
 
-    inventoryValue.textContent = Number(totalValue.toFixed(2));
-    totalSku.textContent = products.length;
+    inventoryValue.textContent = `$ ${Number(totalValue.toFixed(2))}`;
+
+    totalSku.textContent = totalProducts.reduce((acc, product) => {
+        return acc + product.stock
+    }, 0);
+
+    criticalStock.textContent =  totalProducts.reduce((acc, product) => {
+        if (product.stock <= 5) {
+            acc += 1
+        }
+        return acc;
+    }, 0);
 }

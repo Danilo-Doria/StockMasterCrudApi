@@ -59,7 +59,7 @@ homeBtn.addEventListener('click', () => {
 // API LOGIC
 const urlApi = "http://localhost:3000/products";
 let currentPage = 1;
-const limit = 3;
+const limit = 5;
 
 // PREV AND NEXT BTNS
 const next = document.getElementById("next");
@@ -116,10 +116,10 @@ formNewProduct.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const newProduct = {
-        nombre: document.getElementById("nombre").value,
+        nombre: document.getElementById("nombre").value.toLowerCase().trim(),
         precio: Number(document.getElementById("precio").value),
         stock: Number(document.getElementById("stock").value),
-        descripcion: document.getElementById("descripcion").value || ''
+        descripcion: document.getElementById("descripcion").value.toLowerCase().trim() || ''
     };
     
     await addProduct(newProduct);

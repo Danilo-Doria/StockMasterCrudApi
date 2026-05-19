@@ -17,7 +17,7 @@ export async function renderProducts(limitedproducts, totalProducts) {
                 </div>
             </td>
             <td class="px-8 py-6 text-center">
-                <span class="px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-tight border ${product.stock <= 3 ? 'bg-rose-50 text-rose-600 border-rose-100' : 'bg-emerald-50 border-emerald-100 text-emerald-600'}">${product.stock} unidades</span>
+                <span class="px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-tight border ${product.stock <= 5 ? 'bg-rose-50 text-rose-600 border-rose-100' : 'bg-emerald-50 border-emerald-100 text-emerald-600'}">${product.stock} unidades</span>
             </td>
             <td class="px-8 py-6 text-center font-bold text-slate-900">$${product.precio}</td>
             <td class="px-8 py-6 text-right">

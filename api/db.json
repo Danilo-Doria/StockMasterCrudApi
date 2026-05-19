@@ -1,140 +1,126 @@
 {
   "products": [
     {
-      "id": "11",
+      "id": "1",
       "nombre": "Router ASUS ROG Rapture",
       "precio": 299.99,
       "stock": 10,
       "descripcion": "Router gaming WiFi 6 de alta velocidad."
     },
     {
-      "id": "12",
+      "id": "2",
       "nombre": "Tarjeta Gráfica RTX 4080",
       "precio": 1399.99,
       "stock": 3,
       "descripcion": "GPU de alto rendimiento para gaming y render."
     },
     {
-      "id": "13",
+      "id": "3",
       "nombre": "Monitor LG UltraGear 27",
       "precio": 429.99,
       "stock": 8,
       "descripcion": "Monitor gaming QHD de 165Hz."
     },
     {
-      "id": "14",
+      "id": "4",
       "nombre": "Teclado Mecánico Keychron K8",
       "precio": 89.99,
       "stock": 15,
       "descripcion": "Teclado mecánico inalámbrico RGB."
     },
     {
-      "id": "15",
+      "id": "5",
       "nombre": "Mouse Logitech G Pro X",
       "precio": 129.99,
       "stock": 20,
       "descripcion": "Mouse gamer inalámbrico ultraligero."
     },
     {
-      "id": "16",
+      "id": "6",
       "nombre": "SSD Samsung 990 Pro 2TB",
       "precio": 249.99,
       "stock": 12,
       "descripcion": "SSD NVMe Gen4 de alto rendimiento."
     },
     {
-      "id": "17",
+      "id": "7",
       "nombre": "Procesador Ryzen 9 7950X",
-      "precio": 699.99,
-      "stock": 6,
+      "precio": 999.99,
+      "stock": 10,
       "descripcion": "CPU AMD de 16 núcleos para multitarea extrema."
     },
     {
-      "id": "18",
-      "nombre": "Memoria RAM Corsair 32GB",
-      "precio": 159.99,
-      "stock": 18,
-      "descripcion": "Kit DDR5 RGB de alta velocidad."
-    },
-    {
-      "id": "19",
-      "nombre": "Fuente EVGA 850W Gold",
-      "precio": 139.99,
-      "stock": 9,
-      "descripcion": "Fuente modular certificada 80 Plus Gold."
-    },
-    {
-      "id": "20",
+      "id": "10",
       "nombre": "Gabinete NZXT H9 Flow",
       "precio": 189.99,
       "stock": 7,
       "descripcion": "Gabinete premium con excelente airflow."
     },
     {
-      "id": "21",
+      "id": "11",
       "nombre": "Laptop ASUS TUF Gaming",
       "precio": 1199.99,
       "stock": 5,
       "descripcion": "Laptop gaming con RTX 4070."
     },
     {
-      "id": "22",
+      "id": "12",
       "nombre": "Silla Gamer Secretlab Titan",
       "precio": 549.99,
       "stock": 4,
       "descripcion": "Silla ergonómica premium para gaming."
     },
     {
-      "id": "23",
+      "id": "13",
       "nombre": "Webcam Logitech Brio 4K",
       "precio": 199.99,
       "stock": 14,
       "descripcion": "Webcam profesional con resolución 4K."
     },
     {
-      "id": "24",
+      "id": "14",
       "nombre": "Micrófono HyperX QuadCast",
       "precio": 149.99,
       "stock": 11,
       "descripcion": "Micrófono USB RGB para streaming."
     },
     {
-      "id": "25",
+      "id": "15",
       "nombre": "Audífonos SteelSeries Arctis Nova",
       "precio": 179.99,
       "stock": 13,
       "descripcion": "Headset gamer con sonido envolvente."
     },
     {
-      "id": "26",
+      "id": "16",
       "nombre": "iPad Air M2",
       "precio": 799.99,
       "stock": 6,
       "descripcion": "Tablet Apple con chip M2."
     },
     {
-      "id": "27",
+      "id": "17",
       "nombre": "MacBook Pro 16",
       "precio": 2599.99,
       "stock": 2,
       "descripcion": "Laptop profesional con chip M3 Pro."
     },
     {
-      "id": "28",
+      "id": "18",
       "nombre": "Nintendo Switch OLED",
       "precio": 349.99,
       "stock": 10,
       "descripcion": "Consola híbrida con pantalla OLED."
     },
     {
-      "id": "29",
+      "id": "19",
       "nombre": "PlayStation 5 Slim",
       "precio": 499.99,
       "stock": 10,
       "descripcion": "Consola Sony de nueva generación."
     },
     {
-      "id": "30",
+      "id": "20",
       "nombre": "Xbox Series X",
       "precio": 499.99,
       "stock": 20,
