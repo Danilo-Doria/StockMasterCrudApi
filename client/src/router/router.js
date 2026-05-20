@@ -5,6 +5,5 @@ export function showView(viewId) {
     section.classList.add("hidden");
   });
 
-  document.getElementById(viewId)
-    .classList.remove("hidden");
+  document.getElementById(viewId).classList.remove("hidden");
 }

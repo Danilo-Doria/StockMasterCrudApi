@@ -13,11 +13,11 @@ const loginMessage = document.getElementById("login-message");
 
 
 // LOGIN FORM
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", (event) => {
     const username = usernameInput.value.trim();
     const password = passwordInput.value.trim();
 
-    e.preventDefault();
+    event.preventDefault();
 
     if (!username || !password) {
         loginMessage.textContent = "Por favor complete los campos requeridos";
@@ -43,8 +43,8 @@ const contactForm = document.getElementById("contact-form");
 const contactBtn = document.getElementById("contact-btn");
 const homeBtn = document.getElementById("home-btn");
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 });
 
 contactBtn.addEventListener('click', () => {
@@ -57,7 +57,7 @@ homeBtn.addEventListener('click', () => {
 
 
 // API LOGIC
-const urlApi = "http://localhost:3000/products";
+export const urlApi = "http://localhost:3000/products";
 let currentPage = 1;
 const limit = 5;
 
@@ -111,9 +111,9 @@ getApi();
 // ADD PRODUCT LOGIC
 const formNewProduct = document.getElementById("product-form");
 
-formNewProduct.addEventListener('submit', async (e) => {
+formNewProduct.addEventListener('submit', async (event) => {
 
-    e.preventDefault();
+    event.preventDefault();
 
     const newProduct = {
         nombre: document.getElementById("nombre").value.toLowerCase().trim(),
@@ -144,9 +144,9 @@ let deleteCurrentID = null;
 
 
 // OPEN DELETE MODAL
-document.addEventListener("click", async (e) => {
+document.addEventListener("click", async (event) => {
 
-    const btnDelete = e.target.closest(".delete-btn");
+    const btnDelete = event.target.closest(".delete-btn");
 
     if (!btnDelete) {
         return;
@@ -165,9 +165,9 @@ document.addEventListener("click", async (e) => {
 
 
 // DELETE PRODUCT
-deleteBtnModal.addEventListener("click", async (e) => {
+deleteBtnModal.addEventListener("click", async (event) => {
 
-    e.preventDefault();
+    event.preventDefault();
 
     deleteModal.classList.add("hidden");
     deleteModal.classList.remove("flex");
@@ -201,9 +201,9 @@ let editCurrentId = null;
 
 
 // OPEN MODAL
-document.addEventListener("click", (e) => {
+document.addEventListener("click", (event) => {
 
-    const btnEdit = e.target.closest(".edit-btn");
+    const btnEdit = event.target.closest(".edit-btn");
 
     if (!btnEdit) {
         return;
@@ -223,14 +223,14 @@ document.addEventListener("click", (e) => {
 
 
 // SAVE PRODUCT
-saveBtnModal.addEventListener("click", async (e) => {
+saveBtnModal.addEventListener("click", async (event) => {
 
-    e.preventDefault();
+    event.preventDefault();
 
     const updatedProduct = {
         nombre: editName.value,
-        precio: parseFloat(editPrice.value),
-        stock: parseInt(editStock.value),
+        precio: Number(editPrice.value),
+        stock: Number(editStock.value),
         descripcion: editDescription.value
     };
 

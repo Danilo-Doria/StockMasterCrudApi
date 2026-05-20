@@ -1,5 +1,6 @@
+import { urlApi } from "../main";
+
 // ADD PRODUCT
-const urlApi = "http://localhost:3000/products"
 
 export async function addProduct(product) {
 
@@ -47,10 +48,9 @@ export async function deleteProduct(id) {
 export async function editProduct(id, updatedProduct) {
     try {
 
-        const response = await fetch(`http://localhost:3000/products/${id}`, {
+        const response = await fetch(`${urlApi}/${id}`, {
 
             method: "PATCH",
-
             headers: {
                 "Content-Type": "application/json"
             },

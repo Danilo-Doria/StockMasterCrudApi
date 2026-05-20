@@ -1,5 +1,5 @@
 // RENDER PRODUCTS IN HTML
-export async function renderProducts(limitedproducts, totalProducts) {
+export function renderProducts(limitedproducts, totalProducts) {
     const productsContainer = document.getElementById("inventory-list");
     const quantity = document.getElementById("show-quantity");
     let html = '';

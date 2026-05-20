@@ -38,15 +38,15 @@
     {
       "id": "6",
       "nombre": "SSD Samsung 990 Pro 2TB",
-      "precio": 249.99,
-      "stock": 12,
+      "precio": 259.99,
+      "stock": 18,
       "descripcion": "SSD NVMe Gen4 de alto rendimiento."
     },
     {
       "id": "7",
       "nombre": "Procesador Ryzen 9 7950X",
-      "precio": 999.99,
-      "stock": 10,
+      "precio": 899.99,
+      "stock": 20,
       "descripcion": "CPU AMD de 16 núcleos para multitarea extrema."
     },
     {
